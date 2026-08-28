@@ -1,12 +1,12 @@
 import Image from "next/image";
 
+import { siteUrl } from "./site";
+
 const email = "info@kirstynjadephotography.com";
 const phone = "587 597 0412";
 const phoneHref = "tel:+15875970412";
 const instagramHandle = "@kirstynjade_";
 const instagram = "https://instagram.com/kirstynjade_";
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://kirstynjadephotography.com";
 
 const schema = {
   "@context": "https://schema.org",

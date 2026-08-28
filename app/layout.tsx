@@ -1,12 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-
-const siteName = "Kirstyn Jade Photography";
-const description =
-  "Coming soon — wedding, elopement and portrait photography by Kirstyn Jade, based in Calgary, Alberta.";
-
-// Set NEXT_PUBLIC_SITE_URL in Vercel once the domain is attached.
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://kirstynjadephotography.com";
+import { description, siteName, siteUrl } from "./site";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
