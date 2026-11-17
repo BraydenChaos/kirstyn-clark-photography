@@ -61,7 +61,12 @@ export async function submitInquiry(_prev: InquiryState, fd: FormData): Promise<
     };
   }
 
-  const { RESEND_API_KEY, INQUIRY_TO, INQUIRY_FROM } = process.env;
+  // dotenv strips wrapping quotes but the Vercel dashboard keeps them literally, so a
+  // value pasted from .env.local arrives as "\"Name <a@b>\"". Normalise both.
+  const env = (k: string) => process.env[k]?.trim().replace(/^(["'])(.*)\1$/, "$2") || undefined;
+  const RESEND_API_KEY = env("RESEND_API_KEY");
+  const INQUIRY_TO = env("INQUIRY_TO");
+  const INQUIRY_FROM = env("INQUIRY_FROM");
   const fail = (): InquiryState => ({
     status: "error",
     message: `Sorry, something went wrong sending your inquiry. Please email ${INQUIRY_TO ?? "us"} directly.`,
