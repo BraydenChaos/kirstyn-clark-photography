@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+import Inquiry from "./InquiryForm";
 import { siteUrl } from "./site";
 
 const email = "info@kirstynjadephotography.com";
@@ -103,6 +104,7 @@ export default function Home() {
         <p className="blurb">
           Our new, full website is on the way. Enquiries welcome.
         </p>
+        <Inquiry />
         <p className="contact">
           <a href={`mailto:${email}`}>{email}</a>
           <a href={phoneHref}>{phone}</a>
